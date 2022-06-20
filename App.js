@@ -1,11 +1,19 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { useState } from 'react';
+import { Button, StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
+  const [Name,setName] = useState('sincollmm'); 
+  const clickEvent = () => {
+    setName('YOYOLMAO')
+  }
   return (
     <View style={styles.container}>
-      <Text>Do something</Text>
+      <Text>Name: {Name}</Text>
       <StatusBar style="auto" />
+      <View>
+          <Button title='Test' onPress={clickEvent}/>
+      </View>
     </View>
   );
 }
